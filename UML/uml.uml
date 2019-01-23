@@ -14,9 +14,6 @@
       <packagedElement xmi:type="uml:Package" xmi:id="_Q_Sd0AXNEemfJ_J-gXsgUQ" name="endpoints">
         <packagedElement xmi:type="uml:Class" xmi:id="_jZ0C8AXOEemfJ_J-gXsgUQ" name="AnalysisEndpoint">
           <ownedOperation xmi:type="uml:Operation" xmi:id="_ukytoAXOEemfJ_J-gXsgUQ" name="analyze">
-            <ownedParameter xmi:type="uml:Parameter" xmi:id="_zm58oAXOEemfJ_J-gXsgUQ" name="text">
-              <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
-            </ownedParameter>
             <ownedParameter xmi:type="uml:Parameter" xmi:id="_1JbfUAXOEemfJ_J-gXsgUQ" name="token">
               <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
             </ownedParameter>
@@ -33,7 +30,7 @@
         </packagedElement>
         <packagedElement xmi:type="uml:Class" xmi:id="_mZAX8AXOEemfJ_J-gXsgUQ" name="AuthEndpoint">
           <ownedOperation xmi:type="uml:Operation" xmi:id="_MBomIAXPEemfJ_J-gXsgUQ" name="login">
-            <ownedParameter xmi:type="uml:Parameter" xmi:id="_Q6JNMAXPEemfJ_J-gXsgUQ" name="email">
+            <ownedParameter xmi:type="uml:Parameter" xmi:id="_Q6JNMAXPEemfJ_J-gXsgUQ" name="username">
               <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
             </ownedParameter>
             <ownedParameter xmi:type="uml:Parameter" xmi:id="_R2SsYAXPEemfJ_J-gXsgUQ" direction="return">
@@ -50,9 +47,6 @@
       <packagedElement xmi:type="uml:Package" xmi:id="_SQKP0AXNEemfJ_J-gXsgUQ" name="handlers">
         <packagedElement xmi:type="uml:Class" xmi:id="_csW3AAXPEemfJ_J-gXsgUQ" name="AnalysisHandler">
           <ownedOperation xmi:type="uml:Operation" xmi:id="_hQ9qoAXPEemfJ_J-gXsgUQ" name="analyze">
-            <ownedParameter xmi:type="uml:Parameter" xmi:id="_hQ9qoQXPEemfJ_J-gXsgUQ" name="text">
-              <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
-            </ownedParameter>
             <ownedParameter xmi:type="uml:Parameter" xmi:id="_hQ9qogXPEemfJ_J-gXsgUQ" name="token">
               <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
             </ownedParameter>
@@ -68,9 +62,6 @@
           </ownedOperation>
           <ownedOperation xmi:type="uml:Operation" xmi:id="_t8vZsAXPEemfJ_J-gXsgUQ" name="addHistory">
             <ownedParameter xmi:type="uml:Parameter" xmi:id="_wpLx0AXPEemfJ_J-gXsgUQ" name="token">
-              <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
-            </ownedParameter>
-            <ownedParameter xmi:type="uml:Parameter" xmi:id="_ydlusAXPEemfJ_J-gXsgUQ" name="text">
               <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
             </ownedParameter>
             <ownedParameter xmi:type="uml:Parameter" xmi:id="_zwzDAAXPEemfJ_J-gXsgUQ" name="result" type="_cscBcAXNEemfJ_J-gXsgUQ"/>
