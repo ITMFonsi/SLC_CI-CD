@@ -30,6 +30,7 @@ body.fixed-nav {
     padding-top: 1rem;
 }
 
+
 .scroll-to-top {
     position: fixed;
     right: 15px;
@@ -369,7 +370,7 @@ body.sidenav-toggled .navbar-sidenav-tooltip.show {
 
 @media (min-width: 992px) {
     #mainNav.navbar-dark .navbar-collapse .navbar-sidenav {
-        background: #343a40;
+        background: #e9ecef;
     }
     #mainNav.navbar-dark .navbar-collapse .navbar-sidenav li.active a {
         color: white !important;
