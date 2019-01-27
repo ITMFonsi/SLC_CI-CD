@@ -1,6 +1,7 @@
 package at.fhv.issdistance.endpoints;
 
 // Start of user code (user defined imports)
+import at.fhv.issdistance.handlers.AnalysisHandler;
 
 // End of user code
 
@@ -12,13 +13,13 @@ public class AnalysisEndpoint {
 	
 	
 	@org.springframework.web.bind.annotation.PostMapping("/analyze")
-	public at.fhv.issdistance.models.DiscoveredResult analyze(@org.springframework.web.bind.annotation.RequestParam("text") String text, @org.springframework.web.bind.annotation.RequestParam("token") String token) throws Exception {
+	public at.fhv.issdistance.models.DiscoveredResult analyze(@org.springframework.web.bind.annotation.RequestParam("token") String token) throws Exception {
 		// Start of user code analyze
-		return null;
+		return AnalysisHandler.getInstance().analyze(token);
 		// End of user code
 	}
 	
 	// Start of user code (user defined operations)
-	
+
 	// End of user code
 }

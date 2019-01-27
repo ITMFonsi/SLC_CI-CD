@@ -4,6 +4,8 @@ package at.fhv.issdistance.endpoints;
 
 // End of user code
 
+import at.fhv.issdistance.handlers.HistoryHandler;
+
 @org.springframework.web.bind.annotation.RestController
 public class HistoryEndpoint {
 	// Start of user code (user defined attributes)
@@ -14,7 +16,7 @@ public class HistoryEndpoint {
 	@org.springframework.web.bind.annotation.GetMapping("/history")
 	public at.fhv.issdistance.models.DistanceHistory getHistory(@org.springframework.web.bind.annotation.RequestParam("token") String token) throws Exception {
 		// Start of user code getHistory
-		return null;
+		return HistoryHandler.getInstance().getHistory(token);
 		// End of user code
 	}
 	

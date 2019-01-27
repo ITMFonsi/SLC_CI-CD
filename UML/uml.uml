@@ -74,12 +74,18 @@
             </ownedParameter>
           </ownedOperation>
           <ownedOperation xmi:type="uml:Operation" xmi:id="_lAOKoAXPEemfJ_J-gXsgUQ" name="login">
-            <ownedParameter xmi:type="uml:Parameter" xmi:id="_lAOKoQXPEemfJ_J-gXsgUQ" name="email">
+            <ownedParameter xmi:type="uml:Parameter" xmi:id="_lAOKoQXPEemfJ_J-gXsgUQ" name="username">
               <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
             </ownedParameter>
             <ownedParameter xmi:type="uml:Parameter" xmi:id="_lAOKogXPEemfJ_J-gXsgUQ" direction="return">
               <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
             </ownedParameter>
+          </ownedOperation>
+          <ownedOperation xmi:type="uml:Operation" xmi:id="_DEgIoB8hEemh68dneEaQUQ" name="getUserByToken">
+            <ownedParameter xmi:type="uml:Parameter" xmi:id="_DEgIoR8hEemh68dneEaQUQ" name="token">
+              <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+            </ownedParameter>
+            <ownedParameter xmi:type="uml:Parameter" xmi:id="_rT3vkB8hEemh68dneEaQUQ" type="_Ydt-QAXNEemfJ_J-gXsgUQ" direction="return"/>
           </ownedOperation>
         </packagedElement>
       </packagedElement>
@@ -99,7 +105,7 @@
             <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_OQ5IdAXOEemfJ_J-gXsgUQ" value="*"/>
           </ownedAttribute>
         </packagedElement>
-        <packagedElement xmi:type="uml:Class" xmi:id="_bol-0AXNEemfJ_J-gXsgUQ" name="DistanceHistoryItem" visibility="package">
+        <packagedElement xmi:type="uml:Class" xmi:id="_bol-0AXNEemfJ_J-gXsgUQ" name="DistanceHistoryItem" visibility="public">
           <ownedAttribute xmi:type="uml:Property" xmi:id="_3CpgMAXNEemfJ_J-gXsgUQ" name="latitude">
             <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
           </ownedAttribute>
