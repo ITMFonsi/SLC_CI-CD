@@ -4,7 +4,7 @@ package at.fhv.issdistance.models;
 
 // End of user code
 
-/*package*/ class DistanceHistoryItem {
+public class DistanceHistoryItem {
 	/**
 	 * Description of the property latitude.
 	 */
