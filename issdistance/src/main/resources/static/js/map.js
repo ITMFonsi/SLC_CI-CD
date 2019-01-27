@@ -1,8 +1,68 @@
-var mymap = L.map('map').setView([51.505, -0.09], 13);
+    // Initialize the platform object:
+    var platform = new H.service.Platform({
+        'app_id': 'tL7c1r1qjC5qaIrmc8vw',
+        'app_code': '7zG42Iltw2LFTr4WAhK2Xg'
+    });
 
-L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token={accessToken}', {
-    attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors, <a href="https://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery © <a href="https://www.mapbox.com/">Mapbox</a>',
-    maxZoom: 18,
-    id: 'mapbox.streets',
-    accessToken: 'pk.eyJ1IjoiZmJlY2h0b2xkIiwiYSI6ImNqcXpqdmdqaTBlMG80MnBvaTd3eGtndDMifQ.WZpKbf1tXdxawr0AOBG1Rw'
-}).addTo(mymap);
+    // Obtain the default map types from the platform object:
+    var defaultLayers = platform.createDefaultLayers();
+
+    var pixelRatio = window.devicePixelRatio || 1;
+    var defaultLayers = platform.createDefaultLayers({
+        tileSize: pixelRatio === 1 ? 256 : 512,
+        ppi: pixelRatio === 1 ? undefined : 320
+    });
+
+    //Step 2: initialize a map - this map is centered over Europe
+    var map = new H.Map(document.getElementById('map'),
+        defaultLayers.normal.map, {
+            center: { lat: 50, lng: 5 },
+            zoom: 4,
+            pixelRatio: pixelRatio
+        });
+
+    //Step 3: make the map interactive
+    // MapEvents enables the event system
+    // Behavior implements default interactions for pan/zoom (also on mobile touch environments)
+    var behavior = new H.mapevents.Behavior(new H.mapevents.MapEvents(map));
+
+    // Create the default UI components
+    var ui = H.ui.UI.createDefault(map, defaultLayers);
+
+    $(document).ready(function() {
+        $.ajax({
+            url: "/analyze"
+        }).then(function(data) {
+            console.log(data);
+            $('.longitude').append(data.iss_position.longitude);
+            $('.latitude').append(data.iss_position.latitude);
+
+            addMarker(map, data.iss_position.longitude, data.iss_position.latitude);
+
+        });
+    });
+
+
+    function addMarker(map, longitude, latitude) {
+        var marker = new H.map.Marker({lat:latitude, lng:longitude});
+        map.addObject(marker);
+        map.setCenter({lat:latitude, lng:longitude});
+    }
+
+    function refresh() {
+        $(document).ready(function () {
+            $.ajax({
+                url: "/location"
+            }).then(function (data) {
+                console.log(data);
+                $('.longitude').empty();
+                $('.latitude').empty();
+
+                $('.longitude').append("Longitude: ");
+                $('.latitude').append("Latitude: ");
+                $('.longitude').append(data.iss_position.longitude);
+                $('.latitude').append(data.iss_position.latitude);
+                addMarker(map, data.iss_position.longitude, data.iss_position.latitude);
+            });
+        });
+    }
