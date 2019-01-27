@@ -36,7 +36,7 @@ public class AnalysisHandler {
 		// Start of user code analyze
 		if(token != null || !token.equals("")){
 			DiscoveredResult discoveredResult;
-			HttpResponse response = Request.Post("http://api.open-notify.org/iss-now.json").bodyForm(Form.form().build()).execute().returnResponse();
+			HttpResponse response = Request.Get("http://api.open-notify.org/iss-now.json").execute().returnResponse();
 			String result = IOUtils.toString(response.getEntity().getContent(), "UTF-8");
 			Gson gson = new GsonBuilder().create();
 			JsonObject jsonObject = gson.fromJson(result, JsonObject.class);

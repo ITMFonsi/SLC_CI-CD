@@ -1,4 +1,15 @@
-    // Initialize the platform object:
+
+$(document).ready(function () {
+    var token = read('token');
+    console.log(token);
+    if (!token){
+        window.location.replace("index.html");
+    }
+});
+
+
+
+// Initialize the platform object:
     var platform = new H.service.Platform({
         'app_id': 'tL7c1r1qjC5qaIrmc8vw',
         'app_code': '7zG42Iltw2LFTr4WAhK2Xg'
@@ -31,7 +42,11 @@
 
     $(document).ready(function() {
         $.ajax({
-            url: "/analyze"
+            url: "/analyze",
+            type: "POST",
+            data: {
+                token: read('token')
+            },
         }).then(function(data) {
             console.log(data);
             $('.longitude').append(data.iss_position.longitude);
@@ -42,7 +57,6 @@
         });
     });
 
-
     function addMarker(map, longitude, latitude) {
         var marker = new H.map.Marker({lat:latitude, lng:longitude});
         map.addObject(marker);
@@ -52,7 +66,7 @@
     function refresh() {
         $(document).ready(function () {
             $.ajax({
-                url: "/location"
+                url: "/analyze"
             }).then(function (data) {
                 console.log(data);
                 $('.longitude').empty();
