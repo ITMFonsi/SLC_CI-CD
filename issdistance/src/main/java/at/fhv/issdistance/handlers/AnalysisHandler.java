@@ -45,8 +45,8 @@ public class AnalysisHandler {
 			discoveredResult.setMessage(jsonObject.get("message").toString());
 			discoveredResult.setTimestamp(jsonObject.get("timestamp").getAsInt());
 			JsonObject pos = jsonObject.getAsJsonObject("iss_position");
-			discoveredResult.setLatitude(pos.get("latitude").toString());
-			discoveredResult.setLongitude(pos.get("longitude").toString());
+			discoveredResult.setLatitude(pos.get("latitude").getAsString());
+			discoveredResult.setLongitude(pos.get("longitude").getAsString());
             HistoryHandler.getInstance().addHistory(token, discoveredResult);
 			return discoveredResult;
 		}

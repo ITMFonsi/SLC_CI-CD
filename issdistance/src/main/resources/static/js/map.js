@@ -49,10 +49,10 @@ $(document).ready(function () {
             },
         }).then(function(data) {
             console.log(data);
-            $('.longitude').append(data.iss_position.longitude);
-            $('.latitude').append(data.iss_position.latitude);
+            $('.longitude').append(data.longitude);
+            $('.latitude').append(data.latitude);
 
-            addMarker(map, data.iss_position.longitude, data.iss_position.latitude);
+            addMarker(map, data.longitude, data.latitude);
 
         });
     });
@@ -66,7 +66,11 @@ $(document).ready(function () {
     function refresh() {
         $(document).ready(function () {
             $.ajax({
-                url: "/analyze"
+                url: "/analyze",
+                type: "POST",
+                data: {
+                    token: read('token')
+                },
             }).then(function (data) {
                 console.log(data);
                 $('.longitude').empty();
@@ -74,9 +78,9 @@ $(document).ready(function () {
 
                 $('.longitude').append("Longitude: ");
                 $('.latitude').append("Latitude: ");
-                $('.longitude').append(data.iss_position.longitude);
-                $('.latitude').append(data.iss_position.latitude);
-                addMarker(map, data.iss_position.longitude, data.iss_position.latitude);
+                $('.longitude').append(data.longitude);
+                $('.latitude').append(data.latitude);
+                addMarker(map, data.longitude, data.latitude);
             });
         });
     }

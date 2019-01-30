@@ -45,7 +45,7 @@ public class HistoryHandler {
 		DistanceHistoryItem item = new DistanceHistoryItem();
 		item.setResult(result);
 		item.setLatitude(result.getLatitude());
-		item.setLatitude(result.getLongitude());
+		item.setLongitude(result.getLongitude());
 		user.getHistory().getItems().add(item);
 		// End of user code
 	}
