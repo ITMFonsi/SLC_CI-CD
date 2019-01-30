@@ -29,7 +29,7 @@ public class AuthHandler {
 	
 	public void logout(String token) throws Exception {
 		// Start of user code logout
-		if(token != null || !token.equals("")) {
+		if(token != null && !token.equals("")) {
 			users.remove(token);
 		}
 		else {
@@ -40,13 +40,18 @@ public class AuthHandler {
 	
 	public at.fhv.issdistance.models.User getUserByToken(String token) throws Exception {
 		// Start of user code getUserByToken
+
+		if(token.equals("") || token == null) {
+			throw new Exception();
+		}
+
 		return users.get(token);
 		// End of user code
 	}
 	
 	public String login(String username) throws Exception {
 		// Start of user code login
-		if (username != null || !username.equals("")) {
+		if (username != null && !username.equals("")) {
 			String token = DigestUtils.md2Hex(username);
 			if (!users.containsKey(token)) {
 				User user = new User();

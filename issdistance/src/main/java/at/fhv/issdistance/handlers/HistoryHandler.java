@@ -27,15 +27,13 @@ public class HistoryHandler {
 	
 	public at.fhv.issdistance.models.DistanceHistory getHistory(String token) throws Exception {
 		// Start of user code getHistory
-		if (token != null || !token.equals("")) {
+		if (token != null && !token.equals("")) {
 			User user = AuthHandler.getInstance().getUserByToken(token);
 			return user.getHistory();
 
 		} else {
 			throw new Exception("Token is empty");
 		}
-
-
 		// End of user code
 	}
 	

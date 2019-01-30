@@ -2,11 +2,8 @@ package at.fhv.issdistance.handlers;
 
 // Start of user code (user defined imports)
 import at.fhv.issdistance.models.DiscoveredResult;
-import at.fhv.issdistance.models.ISS_position;
-import com.google.gson.JsonElement;
 import org.apache.commons.io.IOUtils;
 import org.apache.http.HttpResponse;
-import org.apache.http.client.fluent.Form;
 import org.apache.http.client.fluent.Request;
 
 import com.google.gson.Gson;
@@ -36,7 +33,7 @@ public class AnalysisHandler {
 	
 	public at.fhv.issdistance.models.DiscoveredResult analyze(String token) throws Exception {
 		// Start of user code analyze
-		if(token != null || !token.equals("")){
+		if(token != null && !token.equals("")){
 			DiscoveredResult discoveredResult = new DiscoveredResult();
 			HttpResponse response = Request.Get("http://api.open-notify.org/iss-now.json").execute().returnResponse();
 			String result = IOUtils.toString(response.getEntity().getContent(), "UTF-8");
