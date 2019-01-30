@@ -2,6 +2,8 @@ package at.fhv.issdistance.handlers;
 
 // Start of user code (user defined imports)
 import at.fhv.issdistance.models.DiscoveredResult;
+import at.fhv.issdistance.models.ISS_position;
+import com.google.gson.JsonElement;
 import org.apache.commons.io.IOUtils;
 import org.apache.http.HttpResponse;
 import org.apache.http.client.fluent.Form;
@@ -35,15 +37,18 @@ public class AnalysisHandler {
 	public at.fhv.issdistance.models.DiscoveredResult analyze(String token) throws Exception {
 		// Start of user code analyze
 		if(token != null || !token.equals("")){
-			DiscoveredResult discoveredResult;
+			DiscoveredResult discoveredResult = new DiscoveredResult();
 			HttpResponse response = Request.Get("http://api.open-notify.org/iss-now.json").execute().returnResponse();
 			String result = IOUtils.toString(response.getEntity().getContent(), "UTF-8");
 			Gson gson = new GsonBuilder().create();
 			JsonObject jsonObject = gson.fromJson(result, JsonObject.class);
-            discoveredResult = gson.fromJson(jsonObject.get("results"), DiscoveredResult.class);
+			discoveredResult.setMessage(jsonObject.get("message").toString());
+			discoveredResult.setTimestamp(jsonObject.get("timestamp").getAsInt());
+			JsonObject pos = jsonObject.getAsJsonObject("iss_position");
+			discoveredResult.setLatitude(pos.get("latitude").toString());
+			discoveredResult.setLongitude(pos.get("longitude").toString());
             HistoryHandler.getInstance().addHistory(token, discoveredResult);
 			return discoveredResult;
-
 		}
 		else {
 			throw new Exception("Invalid authentication");

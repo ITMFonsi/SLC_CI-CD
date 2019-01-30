@@ -44,8 +44,8 @@ public class HistoryHandler {
 		User user = AuthHandler.getInstance().getUserByToken(token);
 		DistanceHistoryItem item = new DistanceHistoryItem();
 		item.setResult(result);
-		item.setLatitude(result.iss_position.getLatitude());
-		item.setLatitude(result.iss_position.getLongitude());
+		item.setLatitude(result.getLatitude());
+		item.setLatitude(result.getLongitude());
 		user.getHistory().getItems().add(item);
 		// End of user code
 	}

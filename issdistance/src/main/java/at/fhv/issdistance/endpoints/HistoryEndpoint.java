@@ -1,10 +1,9 @@
 package at.fhv.issdistance.endpoints;
 
 // Start of user code (user defined imports)
-
+import at.fhv.issdistance.handlers.HistoryHandler;
 // End of user code
 
-import at.fhv.issdistance.handlers.HistoryHandler;
 
 @org.springframework.web.bind.annotation.RestController
 public class HistoryEndpoint {

@@ -13,17 +13,17 @@ public class AuthEndpoint {
 	// End of user code
 	
 	
-	@org.springframework.web.bind.annotation.PostMapping("/login")
-	public String login(@org.springframework.web.bind.annotation.RequestParam("username") String username) throws Exception {
-		// Start of user code login
-		return AuthHandler.getInstance().login(username);
-		// End of user code
-	}
-	
 	@org.springframework.web.bind.annotation.PostMapping("/logout")
 	public void logout(@org.springframework.web.bind.annotation.RequestParam("token") String token) throws Exception {
 		// Start of user code logout
 		AuthHandler.getInstance().logout(token);
+		// End of user code
+	}
+	
+	@org.springframework.web.bind.annotation.PostMapping("/login")
+	public String login(@org.springframework.web.bind.annotation.RequestParam("username") String username) throws Exception {
+		// Start of user code login
+		return AuthHandler.getInstance().login(username);
 		// End of user code
 	}
 	

@@ -27,6 +27,23 @@ public class AuthHandler {
 	    return INSTANCE;
 	}
 	
+	public void logout(String token) throws Exception {
+		// Start of user code logout
+		if(token != null || !token.equals("")) {
+			users.remove(token);
+		}
+		else {
+			throw new Exception("token is empty.");
+		}
+		// End of user code
+	}
+	
+	public at.fhv.issdistance.models.User getUserByToken(String token) throws Exception {
+		// Start of user code getUserByToken
+		return users.get(token);
+		// End of user code
+	}
+	
 	public String login(String username) throws Exception {
 		// Start of user code login
 		if (username != null || !username.equals("")) {
@@ -41,23 +58,6 @@ public class AuthHandler {
 		}
 		else {
 			throw new Exception("username is empty!");
-		}
-		// End of user code
-	}
-	
-	public at.fhv.issdistance.models.User getUserByToken(String token) throws Exception {
-		// Start of user code getUserByToken
-		return users.get(token);
-		// End of user code
-	}
-	
-	public void logout(String token) throws Exception {
-		// Start of user code logout
-		if(token != null || !token.equals("")) {
-			users.remove(token);
-		}
-		else {
-			throw new Exception("token is empty.");
 		}
 		// End of user code
 	}

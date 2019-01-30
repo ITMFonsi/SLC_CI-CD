@@ -16,9 +16,14 @@ public class DiscoveredResult {
 	public int timestamp = 0;
 	
 	/**
-	 * Description of the property iss_position.
+	 * Description of the property longitude.
 	 */
-	public at.fhv.issdistance.models.ISS_position iss_position = null;
+	public String longitude = null;
+	
+	/**
+	 * Description of the property latitude.
+	 */
+	public String latitude = null;
 	
 	// Start of user code (user defined attributes)
 	
@@ -40,12 +45,20 @@ public class DiscoveredResult {
 		   this.timestamp = timestamp;
 		}
 		
-		public at.fhv.issdistance.models.ISS_position getIss_position(){
-		   return this.iss_position;
+		public String getLongitude(){
+		   return this.longitude;
 		}
 		
-		public void setIss_position(at.fhv.issdistance.models.ISS_position iss_position){
-		   this.iss_position = iss_position;
+		public void setLongitude(String longitude){
+		   this.longitude = longitude;
+		}
+		
+		public String getLatitude(){
+		   return this.latitude;
+		}
+		
+		public void setLatitude(String latitude){
+		   this.latitude = latitude;
 		}
 		
 	

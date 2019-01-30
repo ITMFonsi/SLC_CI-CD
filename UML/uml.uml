@@ -125,16 +125,10 @@
             <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Integer"/>
             <defaultValue xmi:type="uml:LiteralInteger" xmi:id="_JocJQBmbEemcOql7i1wqbA"/>
           </ownedAttribute>
-          <ownedAttribute xmi:type="uml:Property" xmi:id="_TkWYwBmbEemcOql7i1wqbA" name="iss_position" type="_Pl0_oBmZEemo5cQCF_6zeA" association="_TkQSIBmbEemcOql7i1wqbA">
-            <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_TkW_0BmbEemcOql7i1wqbA"/>
-            <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_TkXm4BmbEemcOql7i1wqbA" value="1"/>
-          </ownedAttribute>
-        </packagedElement>
-        <packagedElement xmi:type="uml:Class" xmi:id="_Pl0_oBmZEemo5cQCF_6zeA" name="ISS_position">
-          <ownedAttribute xmi:type="uml:Property" xmi:id="_SIiQIBmdEemcOql7i1wqbA" name="latitude">
+          <ownedAttribute xmi:type="uml:Property" xmi:id="_AiSsUCSMEemYyf_nz7mkDQ" name="longitude">
             <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
           </ownedAttribute>
-          <ownedAttribute xmi:type="uml:Property" xmi:id="_UPnRYBmdEemcOql7i1wqbA" name="longitude">
+          <ownedAttribute xmi:type="uml:Property" xmi:id="_DyeDoCSMEemYyf_nz7mkDQ" name="latitude">
             <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
           </ownedAttribute>
         </packagedElement>
@@ -157,12 +151,6 @@
         <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_UaztAQXOEemfJ_J-gXsgUQ" key="nature" value="UML_Nature"/>
       </eAnnotations>
       <ownedEnd xmi:type="uml:Property" xmi:id="_Ua0UEgXOEemfJ_J-gXsgUQ" type="_bol-0AXNEemfJ_J-gXsgUQ" association="_Uaye4AXOEemfJ_J-gXsgUQ"/>
-    </packagedElement>
-    <packagedElement xmi:type="uml:Association" xmi:id="_TkQSIBmbEemcOql7i1wqbA" memberEnd="_TkWYwBmbEemcOql7i1wqbA _TkXm4RmbEemcOql7i1wqbA">
-      <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_TkVKoBmbEemcOql7i1wqbA" source="org.eclipse.papyrus">
-        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_TkVKoRmbEemcOql7i1wqbA" key="nature" value="UML_Nature"/>
-      </eAnnotations>
-      <ownedEnd xmi:type="uml:Property" xmi:id="_TkXm4RmbEemcOql7i1wqbA" name="discoveredresult" type="_cscBcAXNEemfJ_J-gXsgUQ" association="_TkQSIBmbEemcOql7i1wqbA"/>
     </packagedElement>
     <profileApplication xmi:type="uml:ProfileApplication" xmi:id="_GWLxIAXNEemfJ_J-gXsgUQ">
       <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_GWONYAXNEemfJ_J-gXsgUQ" source="PapyrusVersion">
@@ -192,5 +180,4 @@
   <model:Handler xmi:id="_ip2wMAXPEemfJ_J-gXsgUQ" base_Class="_csW3AAXPEemfJ_J-gXsgUQ"/>
   <model:Handler xmi:id="_msoCEAXPEemfJ_J-gXsgUQ" base_Class="_e29GUAXPEemfJ_J-gXsgUQ"/>
   <model:Handler xmi:id="_rNmS4AXPEemfJ_J-gXsgUQ" base_Class="_dsxLIAXPEemfJ_J-gXsgUQ"/>
-  <model:Model xmi:id="_UHInoBmZEemo5cQCF_6zeA" base_Class="_Pl0_oBmZEemo5cQCF_6zeA"/>
 </xmi:XMI>
